@@ -1,20 +1,8 @@
-H, M, S = map(int, input().split())
-D = int(input()) 
+Hour, Minute, Second = map(int, input().split()) # 시간, 분, 초 입력
+CookingTime = int(input())                       # 요리 시간 입력력
 
-S += D % 60
-D = D // 60
-if S >= 60:
-    S -= 60
-    M += 1
+Second += CookingTime                            # 초에 요리 시간 더하기
+Minute += Second // 60                           # 분에 초를 60으로 나눠서 더하기기
+Hour += Minute // 60                             # 시간에 분을 60으로 나눠서 더하기기
 
-M += D % 60
-D = D // 60
-if M >= 60:
-    M -= 60
-    H += 1
-
-H += D % 24
-if H >= 24:
-    H -= 24
-
-print(H,M,S)
+print(Hour % 24, Minute % 60, Second % 60)       # 시간, 분, 초 전부 60으로 몫 나누기
