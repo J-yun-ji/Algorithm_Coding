@@ -1,12 +1,13 @@
-n = int(input())
+N = int(input())
+ 
+Array = list(map(int, input().split()))
+Brray = list(map(int, input().split()))
 
-a_list = list(map(int, input().split()))
-b_list = list(map(int, input().split()))
+sorted_a = sorted(Array, reverse=True)
+sorted_b = sorted(Brray)
 
-s = 0
-for i in range(n):
-    s += min(a_list) * max(b_list)
-    a_list.pop(a_list.index(min(a_list)))
-    b_list.pop(b_list.index(max(b_list)))
+sum = 0
+for i in range(N) :
+    sum += sorted_a[i] * sorted_b[i]
 
-print(s)
+print(sum)
