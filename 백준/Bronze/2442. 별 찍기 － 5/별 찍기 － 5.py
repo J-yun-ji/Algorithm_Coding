@@ -1,3 +1,10 @@
-n = int(input())
-for i in range(1,n+1):
-    print(" "*(n-i) + "*" * (2*i-1))
+N = int(input())
+NN = N - 2
+count = 1
+for i in range(N) :  
+    if NN == -1 :
+        print("*" * count)
+    else :
+        print(" " * NN, "*" * count)
+    count += 2
+    NN -= 1
