@@ -1,4 +1,4 @@
 N = int(input())
 
-for i in range(N) :
-    print(str(i+1) + ".", input())
+for i in range(1, N+1) :
+    print(str(i) + ".", input())
