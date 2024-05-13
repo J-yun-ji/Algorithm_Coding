@@ -42,7 +42,7 @@ def bfs(x, y) :
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < n and 0 <= ny < m :
-                if map[nx][ny] == 1 and visited[nx][ny] == False :
+                if visited[nx][ny] == False and map[nx][ny] == 1 :
                     result += 1
                     visited[nx][ny] = True
                     q.append([nx, ny])
@@ -55,7 +55,7 @@ maxSize = 0
 
 for i in range(n) :
     for j in range(m) :
-        if map[i][j] == 1 and visited[i][j] == False :
+        if visited[i][j] == False and map[i][j] == 1 :
             visited[i][j] = True
             drawCnt += 1
             maxSize = max(maxSize, bfs(i, j))
